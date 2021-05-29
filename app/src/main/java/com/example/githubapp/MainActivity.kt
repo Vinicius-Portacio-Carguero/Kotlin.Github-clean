@@ -1,21 +1,22 @@
 package com.example.githubapp
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.githubapp.src.feature.profile.view.ProfileViewInjector
-import com.example.githubapp.src.plugin.profile.gateway.DaggerProfileInjectorComponent
+import android.util.AttributeSet
+import android.view.View
+import com.example.githubapp.src.feature.profile.useCase.profileController
 
 
 class MainActivity : AppCompatActivity() {
 
-    val ProfileInjector = ProfileViewInjector
+    private val controller = profileController()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
 
-        ProfileInjector.Fetch()
 
     }
 
